@@ -94,7 +94,7 @@ module PdfHelper
         render_opts.merge!(:file => options[hf][:html][:file]) if options[:file]
         tf.write render_to_string(render_opts)
         tf.flush
-        options[hf][:html][:url] = "file:///#{tf.path}"
+        options[hf][:html][:url] = tf.path
       end
     end
     options
